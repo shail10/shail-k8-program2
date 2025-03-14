@@ -32,12 +32,16 @@ app.post('/sum', (req, res) => {
     }
 
     const headers = rows[0].split(',')
+    console.log(headers)
 
     if (
       headers.length !== 2 ||
       headers[0] !== 'product' ||
       headers[1] !== 'amount'
     ) {
+      console.log(headers[0])
+      console.log(headers[1])
+
       return res.status(400).json({
         file: file,
         error: 'Input file not in CSV format 2.',
