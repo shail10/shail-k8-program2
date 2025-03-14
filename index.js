@@ -36,8 +36,8 @@ app.post('/sum', (req, res) => {
 
     if (
       headers.length !== 2 ||
-      headers[0] !== 'product' ||
-      headers[1] !== 'amount'
+      headers[0].trim() !== 'product' ||
+      headers[1].trim() !== 'amount'
     ) {
       console.log(headers[0])
       console.log(headers[1])
