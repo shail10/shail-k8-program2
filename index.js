@@ -32,16 +32,12 @@ app.post('/sum', (req, res) => {
     }
 
     const headers = rows[0].split(',')
-    console.log(headers)
 
     if (
       headers.length !== 2 ||
       headers[0].trim() !== 'product' ||
       headers[1].trim() !== 'amount'
     ) {
-      console.log(headers[0])
-      console.log(headers[1])
-
       return res.status(400).json({
         file: file,
         error: 'Input file not in CSV format 2.',
@@ -50,10 +46,12 @@ app.post('/sum', (req, res) => {
 
     const productIndex = headers.indexOf('product')
     const amountIndex = headers.indexOf('amount')
+    console.log(amountIndex)
 
     let sum = 0
     for (let i = 1; i < rows.length; i++) {
       const columns = rows[i].split(',')
+      console.log(columns)
 
       if (columns.length !== 2) {
         return res.status(400).json({
@@ -63,6 +61,8 @@ app.post('/sum', (req, res) => {
       }
 
       const amount = parseFloat(columns[amountIndex])
+      console.log(amount)
+
       if (isNaN(amount)) {
         return res.status(400).json({
           file: file,
