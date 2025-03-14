@@ -27,7 +27,7 @@ app.post('/sum', (req, res) => {
     if (rows.length < 2) {
       return res.status(400).json({
         file: file,
-        error: 'Input file not in CSV format',
+        error: 'Input file not in CSV format 1',
       })
     }
 
@@ -40,7 +40,7 @@ app.post('/sum', (req, res) => {
     ) {
       return res.status(400).json({
         file: file,
-        error: 'Input file not in CSV format.',
+        error: 'Input file not in CSV format 2.',
       })
     }
 
@@ -54,7 +54,7 @@ app.post('/sum', (req, res) => {
       if (columns.length !== 2) {
         return res.status(400).json({
           file: file,
-          error: 'Input file not in CSV format.',
+          error: 'Input file not in CSV format 3.',
         })
       }
 
@@ -62,7 +62,7 @@ app.post('/sum', (req, res) => {
       if (isNaN(amount)) {
         return res.status(400).json({
           file: file,
-          error: 'Input file not in CSV format.',
+          error: 'Input file not in CSV format 4.',
         })
       }
 
