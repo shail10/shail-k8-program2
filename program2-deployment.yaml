@@ -13,7 +13,7 @@ spec:
         app: container2
     spec:
       containers:
-        - name: container1
+        - name: container2
           image: us-central1-docker.pkg.dev/liquid-fort-453318-q8/k8-program1-artifact-registry/container2:latest
           volumeMounts:
             - mountPath: /shail_PV_dir
