@@ -10,7 +10,7 @@ const STORAGE_PATH = '/shail_PV_dir'
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Container 2 is running!')
+  res.send('Container 2 is running successfully!')
 })
 
 app.post('/sum', (req, res) => {
